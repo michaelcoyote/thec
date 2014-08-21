@@ -12,9 +12,7 @@ files being edited
 *.elf
 *.hex
 
-# for this project just kill everything
-#*
 
-# then always allow c files
+# always allow c files
 !*.c
 !*.h
