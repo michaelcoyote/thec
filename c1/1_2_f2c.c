@@ -1,13 +1,22 @@
 #include <stdio.h>
 
 /* Print the Fahrenheit to Celsius table
-	for fahr = 0,20, ..., 300 */
+ * for fahr = 0,20, ..., 300
+ *
+ * Introduced
+ * - variable declaration
+ * - numeric data types
+ *   in this case integers and floats
+ * - arithmetic expressions
+ * - print formatting and variable
+ *   replacement using % constructs
+ * - while loops and loop control */
 
-main ()
+int main ()
 {
 	float fahr, celsius;
 	int lower, upper, step;
-	
+
 	lower = -20; 	/* lower bound of temp table */
 	upper = 300; 	/* upper limit */
 	step = 10;	/* step size */
