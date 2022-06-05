@@ -1,17 +1,21 @@
 #include <stdio.h>
 
 
-/* line count */
+/* line/tab/blank count
+ *
+ * Exercise 1-8
+ *
+ * */
 
-main ()
+int main ()
 {
 	int c,nl;
 	nl = 0;
 
 	while ((c = getchar()) != EOF)
 		if (c == ('\n'||'\t'||' '))
-			++nl; 
+			++nl;
 	printf("%d\n",nl);
-	
+
 }
 

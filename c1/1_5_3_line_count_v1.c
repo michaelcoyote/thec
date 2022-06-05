@@ -1,17 +1,19 @@
 #include <stdio.h>
 
 
-/* line count */
+/* line count
+ *
+ * We simply count newlines */
 
-main ()
+int main ()
 {
 	int c,nl;
 	nl = 0;
 
 	while ((c = getchar()) != EOF)
 		if (c == '\n')
-			++nl; 
+			++nl;
 	printf("%d\n",nl);
-	
+
 }
 
