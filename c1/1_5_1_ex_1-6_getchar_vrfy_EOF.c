@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 
-/* copy input to output */
+/* EOF state detection Exercise 1-6 */
 
-main ()
+int main ()
 {
 	int c;
 
@@ -11,6 +11,6 @@ main ()
 		putchar (c);
 	}
 		printf ("0 - The end\n");
-	
+
 }
 
