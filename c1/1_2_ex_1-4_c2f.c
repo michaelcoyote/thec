@@ -3,11 +3,11 @@
 /* Print the Celsius to Farhenheit table
 	for fahr = 0,20, ..., 200 */
 
-main ()
+int main ()
 {
 	float fahr, celsius;
 	int lower, upper, step;
-	
+
 	lower = 0; 	/* lower bound of temp table */
 	upper = 100; 	/* upper limit */
 	step = 2;	/* step size */
