@@ -21,16 +21,18 @@
  *
  * using this outline to analyze the needs of each function and their returns we can guess that
  * we will need:
- *     - getline: Will need to detect EOF and return the lenght of the line for testing or 0 to
+ *     - getline: Will need to detect EOF and return the length of the line for testing or 0 to
  *                signal that the end of the file was reached as even an empty line has a length
  *                of 1 including the \n character.
+ *                This takes the line and the maximum lenght as arguments.
  *     - copy:    This function will copy a line to it's save spot.
- *     - main:    Contains the main overarching logic, spcifically the loop where we find the
+ *                There is no return for this function.
+ *     - main:    Contains the main overarching logic, specifically the loop where we find the
  *                longest line, but also where we detect the end of the end of tile and print
  *                the result.  The previous two functions are called from here.
  *
- *     Notes: I also added the lenght of the biggest line into the output along with a newline
- *      simply because
+ *     Notes: I renamed the function getline to getlinel because there's now a stdio.h function and this conflicts.
+ *            I also added the length of the biggest line into the output along with a newline simply because
  *      */
 
 int getlinel(char line[], int maxline);
@@ -56,17 +58,21 @@ int main()
 }
 
 
-/* getline - read line into s and return lenght */
+/* getlinel - read line into s and return length */
 int getlinel(char s[], int lim)
 {
     int c, i;
 
+    /* check the current character for EOF or newline.  As long as we've *not* hit one of
+     * those or reached the character limit, add the current character to array s[] */
     for (i=0; i<lim-1 && (c=getchar())!=EOF && c!='\n'; ++i)
         s[i] = c;
+    /* newline is a character too and we didn't increment length or add it to array s[] above */
     if (c == '\n') {
         s[i] = c;
         ++i;
     }
+    /* put a null terminator in the string as a signal to the copy function that it's done */
     s[i] = '\0';
     return i;
 }
@@ -76,7 +82,7 @@ void copy(char to[], char from[])
 {
     int i;
     i =0;
+    /* copy until we hit the null termination */
     while ((to[i] = from[i]) != '\0')
         ++i;
-
 }
